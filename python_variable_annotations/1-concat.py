@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""defines a function that concatenates 2 strings and returns a concatenated string"""
+"""
+defines a function that concatenates 2 strings 
+and returns a concatenated string
+"""
 
 
 def concat(str1: str, str2: str) -> str:
