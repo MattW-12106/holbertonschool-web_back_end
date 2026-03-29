@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-defines a function that concatenates 2 strings 
+defines a function that concatenates 2 strings
 and returns a concatenated string
 """
 
