@@ -3,13 +3,14 @@
 get_page that takes two integer arguments page
 with default value 1 and page_size with default value 10
 """
-# index_range from 0-simple_helper_function.py
-from 0-simple_helper_function import index_range
 
 # imports
 import csv
 import math
 from typing import List
+
+# index_range from 0-simple_helper_function.py
+index_range = __import__('0-simple_helper_function').index_range
 
 
 class Server:
@@ -21,13 +22,12 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
-        """
+        """Cached dataset"""
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-            self.__dataset = dataset[1:]
+            self.__dataset = dataset[1:]    
 
         return self.__dataset
 
@@ -35,8 +35,8 @@ class Server:
         """Returns the appropriate page of the dataset (i.e. the correct
         list of rows)
         """
-        assert type(page) == int and page > 0
-        assert type(page_size) == int and page_size > 0
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
 
         dataset = self.dataset()
         start, end = index_range(page, page_size)
