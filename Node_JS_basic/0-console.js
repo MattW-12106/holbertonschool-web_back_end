@@ -1,3 +1,5 @@
-export default function displayMessage(message = 'Hello NodeJS!') {
+function displayMessage(message) {
     console.log(message);
 }
+
+module.exports = displayMessage;
