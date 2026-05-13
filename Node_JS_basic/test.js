@@ -14,3 +14,22 @@ try {
 } catch (err) {
   console.log(err.message);
 }
+
+// test for countStudents (Async) function
+const countStudentsAsync = require('./3-read_file_async');
+
+countStudentsAsync('database.csv')
+  .then(() => {
+    console.log('Students counted successfully');
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+countStudentsAsync('non_existent_file.csv')
+  .then(() => {
+    console.log('Students counted successfully');
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
